@@ -29,9 +29,94 @@ This document details the process of integrating the Beachfront AD SDK with your
             android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
 
-## Example Code
+Once you've completed the above steps, you can start displaying ads in your application by following the simple instructions Interstitial Ad as below :
 
-Following methods can be called from VideoSDK object which is a singleton class and instance of VideoSDK can be get as following:
+In your Activity class (the one from which you want to show the ad), declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener and instantiate it in the onCreate(Bundle savedInstanceState) method.
+
+```
+public class MainActivity extends Activity implements
+  	BFIOInterstitial.InterstitialListener {
+
+BFIOInterstitial interstitial;
+
+  @Override
+	protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  interstitial = new BFIOInterstitial(MainActivity.this, this);
+	}
+  
+```
+
+Your application is now ready to display an Interstitial ad, 
+
+Call requestInterstitial method to request an Interstitial ad. You have to pass the appId & adUnitId
+
+```
+  interstitial.requestInterstitial("appid", // appID
+  				"addUnitId"); // adUnitId
+```
+
+In case Ad Server find a AD it will return to 
+
+```
+  public void onReceiveInterstitial(BFIOInterstitalAd ad);
+```
+
+Otherwise will return to:
+
+```
+  public void onInterstitialFailed(BFIOErrorCode errorCode);
+```
+
+To start the Interstitial Call the following method 
+```
+  interstitial.showInterstitial(ad);
+```
+
+In case Ad Server find a AD it will return to 
+
+
+Following are life cycle methods of an Interstitial ad:
+```
+  	/**
+		 * On Interstitial Failed
+		 * 
+		 * @param errorCode
+		 */
+		public void onInterstitialFailed(BFIOErrorCode errorCode);
+
+		/**
+		 * Interstitial Displaying on the screen
+		 * 
+		 */
+		public void onInterstitialStarted();
+
+		/**
+		 * Interstitial clicked
+		 * 
+		 */
+		public void onInterstitialClicked();
+
+		/**
+		 * Interstitial dismissed
+		 * 
+		 */
+		public void onInterstitialDismissed();
+
+		/**
+		 * Interstitial completed
+		 * 
+		 */
+		public void onInterstitialCompleted();
+
+		/**
+		 * On Interstitial Received
+		 * 
+		 */
+		public void onReceiveInterstitial(BFIOInterstitalAd ad);
+```
+
 
 If you have any questions, don't hesitate to email us at support@beachfrontmedia.com.
 
