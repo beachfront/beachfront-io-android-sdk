@@ -1,4 +1,4 @@
-# Beachfront Android SDK usage guide
+## Beachfront Android SDK usage guide
 
 ## Overview
 This document details the process of integrating the Beachfront AD SDK with your Android application. 
@@ -184,8 +184,6 @@ public class MainActivity extends Activity implements
 
 ```
 
-
-## Issues and questions
 
 Have a bug? Please [create an issue on GitHub](https://github.com/beachfront/beachfront-io-android-sdk/issues)!
 
