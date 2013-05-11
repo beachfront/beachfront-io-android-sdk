@@ -15,11 +15,10 @@ This document details the process of integrating the Beachfront AD SDK with your
 2. Download the BeachFront Android AD SDK & Android Support Library, copy into the /lib folder of your Android Project. Make sure the jar files in lib is selected in the Order and Export tab of the Java Build Path panel.
 3. Add following required permession in your AndroidManifest.xml
 
-```  
+```
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
 ```
 4. Add the BF activity in the application node of AndroidManifesh.xml:
 
