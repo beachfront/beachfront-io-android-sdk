@@ -1,4 +1,4 @@
-# Beachfront Media Android SDK usage guide
+# Beachfront Android SDK usage guide
 
 ## Overview
 This document details the process of integrating the Beachfront Android A SDK with your Android application. 
