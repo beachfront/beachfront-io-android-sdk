@@ -1,7 +1,7 @@
 # Beachfront Android SDK usage guide
 
 ## Overview
-This document details the process of integrating the Beachfront Android A SDK with your Android application. 
+This document details the process of integrating the Beachfront AD SDK with your Android application. 
 
 ## Requirements
 
