@@ -21,7 +21,7 @@ This document details the process of integrating the Beachfront AD SDK with your
 	android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
 
-4. Add following required permession in your AndroidManifest.xml
+   Add following required permession in your AndroidManifest.xml
 
 ```
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
