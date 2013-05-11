@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- kvarela: Red square -->
+
+    <View
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:background="#FFFF0000" />
+
+    <!-- kvarela: White square -->
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#FFFFFFFF" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/icon" />
+
+</FrameLayout>
