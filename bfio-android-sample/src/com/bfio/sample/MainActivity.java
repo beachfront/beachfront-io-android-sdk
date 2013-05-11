@@ -21,7 +21,7 @@ public class MainActivity extends Activity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		findViewById(R.id.request).setOnClickListener(this);
-		interstitial = new BFIOInterstitial(this, this);
+		interstitial = new BFIOInterstitial(MainActivity.this, this);
 	}
 
 	@Override
@@ -45,7 +45,8 @@ public class MainActivity extends Activity implements
 
 	@Override
 	public void onInterstitialClicked() {
-		// TODO Auto-generated method stub
+		Toast.makeText(MainActivity.this, "Interstitial Clicked",
+				Toast.LENGTH_SHORT).show();
 
 	}
 
