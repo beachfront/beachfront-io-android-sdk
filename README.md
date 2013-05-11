@@ -71,7 +71,8 @@ To start the Interstitial Call the following method
 	interstitial.showInterstitial(ad);
 ```
 
-Following are life cycle methods of an Interstitial ad:
+Following are callbacks methods of an Interstitial ad:
+
 ```
 	/**
 	 * On Interstitial Failed
@@ -110,6 +111,79 @@ Following are life cycle methods of an Interstitial ad:
 	  */
 	 public void onReceiveInterstitial(BFIOInterstitalAd ad);
 ```
+
+Example Code:
+```
+public class MainActivity extends Activity implements
+		BFIOInterstitial.InterstitialListener {
+
+	private BFIOInterstitial interstitial;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		interstitial = new BFIOInterstitial(MainActivity.this, this);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	protected void onDestroy() {
+		interstitial.onDestroy();
+		super.onDestroy();
+	}
+
+	@Override
+	public void onInterstitialFailed(BFIOErrorCode errorCode) {
+		Toast.makeText(MainActivity.this, "Interstitial not received",
+				Toast.LENGTH_SHORT).show();
+
+	}
+
+	@Override
+	public void onInterstitialClicked() {
+		Toast.makeText(MainActivity.this, "Interstitial Clicked",
+				Toast.LENGTH_SHORT).show();
+
+	}
+
+	@Override
+	public void onInterstitialDismissed() {
+		Toast.makeText(MainActivity.this, "Interstitial dismissed",
+				Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onReceiveInterstitial(BFIOInterstitalAd ad) {
+		Toast.makeText(MainActivity.this, "Received interstitial",
+				Toast.LENGTH_SHORT).show();
+		interstitial.showInterstitial(ad);
+
+	}
+
+	@Override
+	public void onInterstitialCompleted() {
+		Toast.makeText(MainActivity.this, "Interstitial play completed",
+				Toast.LENGTH_SHORT).show();
+
+	}
+
+	@Override
+	public void onInterstitialStarted() {
+		Toast.makeText(MainActivity.this, "Interstitial started",
+				Toast.LENGTH_SHORT).show();
+
+	}
+
+}
+
+```
+
 
 ## Issues and questions
 
