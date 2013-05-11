@@ -6,13 +6,13 @@ This document details the process of integrating the Beachfront AD SDK with your
 ## Requirements
 
 * BeachFront IO app id & Ad Unit id
-* BeachFront SDK SDK Jar
+* BeachFront SDK Jar
 * Android 1.5 and above
 * Android Support Library
 
 ## Installation
 1. Access the beachfront.io Console and register your application to get your App ID & Ad unit Id;
-2. Download the BeachFront Android AD SDK, copy into the /lib folder of your Android Project. Make sure the lib is selected in the Order and Export tab of the Java Build Path panel.
+2. Download the BeachFront Android AD SDK & Android Support Library, copy into the /lib folder of your Android Project. Make sure the jar files in lib is selected in the Order and Export tab of the Java Build Path panel.
 3. Add following required permession in your AndroidManifest.xml
 
 ```  
