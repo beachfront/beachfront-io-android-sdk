@@ -13,14 +13,7 @@ This document details the process of integrating the Beachfront AD SDK with your
 ## Installation
 1. Access the beachfront.io Console and register your application to get your App ID & Ad unit Id;
 2. Download the BeachFront Android AD SDK & Android Support Library, copy into the /lib folder of your Android Project. Make sure the jar files in lib is selected in the Order and Export tab of the Java Build Path panel.
-3. Add following required permession in your AndroidManifest.xml
-
-```
-  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
-```
-4. Add the BF activity in the application node of AndroidManifesh.xml:
+3. Add the BF activity in the application node of AndroidManifesh.xml:
 
 ```
 	<activity
@@ -28,7 +21,15 @@ This document details the process of integrating the Beachfront AD SDK with your
 	android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
 
-Once you've completed the above steps, you can start displaying ads in your application by following the simple instructions Interstitial Ad as below :
+4. Add following required permession in your AndroidManifest.xml
+
+```
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+```
+
+Once you've completed the above steps, you can start displaying ads in your application by following the simple instructions for Interstitial Ad as below :
 
 In your Activity class (the one from which you want to show the ad), declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener and instantiate it in the onCreate(Bundle savedInstanceState) method.
 
