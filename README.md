@@ -24,9 +24,9 @@ This document details the process of integrating the Beachfront AD SDK with your
 4. Add the BF activity in the application node of AndroidManifesh.xml:
 
 ```
-<activity
-            android:name="com.bfio.ad.BFIOActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+	<activity
+	android:name="com.bfio.ad.BFIOActivity"
+	android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
 
 Once you've completed the above steps, you can start displaying ads in your application by following the simple instructions Interstitial Ad as below :
@@ -34,18 +34,17 @@ Once you've completed the above steps, you can start displaying ads in your appl
 In your Activity class (the one from which you want to show the ad), declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener and instantiate it in the onCreate(Bundle savedInstanceState) method.
 
 ```
-public class MainActivity extends Activity implements
-  	BFIOInterstitial.InterstitialListener {
+	public class MainActivity extends Activity implements
+	BFIOInterstitial.InterstitialListener {
 
-BFIOInterstitial interstitial;
+	BFIOInterstitial interstitial;
 
-  @Override
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
-  interstitial = new BFIOInterstitial(MainActivity.this, this);
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+	interstitial = new BFIOInterstitial(MainActivity.this, this);
 	}
-  
 ```
 
 Your application is now ready to display an Interstitial ad, 
@@ -53,74 +52,67 @@ Your application is now ready to display an Interstitial ad,
 Call requestInterstitial method to request an Interstitial ad. You have to pass the appId & adUnitId
 
 ```
-  interstitial.requestInterstitial("appid", // appID
-  				"addUnitId"); // adUnitId
+	interstitial.requestInterstitial("appid", // appID
+	"addUnitId"); // adUnitId
 ```
 
 In case Ad Server find a AD it will return to 
-
 ```
-  public void onReceiveInterstitial(BFIOInterstitalAd ad);
+	public void onReceiveInterstitial(BFIOInterstitalAd ad);
 ```
 
 Otherwise will return to:
-
 ```
-  public void onInterstitialFailed(BFIOErrorCode errorCode);
+	public void onInterstitialFailed(BFIOErrorCode errorCode);
 ```
 
 To start the Interstitial Call the following method 
 ```
-  interstitial.showInterstitial(ad);
+	interstitial.showInterstitial(ad);
 ```
-
-In case Ad Server find a AD it will return to 
-
 
 Following are life cycle methods of an Interstitial ad:
 ```
-  	/**
-		 * On Interstitial Failed
-		 * 
-		 * @param errorCode
-		 */
-		public void onInterstitialFailed(BFIOErrorCode errorCode);
+	/**
+	 * On Interstitial Failed
+	 * 
+	 * @param errorCode
+	 */
+	 public void onInterstitialFailed(BFIOErrorCode errorCode);
 
-		/**
-		 * Interstitial Displaying on the screen
-		 * 
-		 */
-		public void onInterstitialStarted();
+	/**
+	 * Interstitial Displaying on the screen
+	 * 
+	 */
+	 public void onInterstitialStarted();
 
-		/**
-		 * Interstitial clicked
-		 * 
-		 */
-		public void onInterstitialClicked();
+	/**
+	 * Interstitial clicked
+	 * 
+	 */
+	 public void onInterstitialClicked();
 
-		/**
-		 * Interstitial dismissed
-		 * 
-		 */
-		public void onInterstitialDismissed();
+	/**
+	 * Interstitial dismissed
+	 * 
+	 */
+	 public void onInterstitialDismissed();
 
-		/**
-		 * Interstitial completed
-		 * 
-		 */
-		public void onInterstitialCompleted();
+	/**
+	 * Interstitial completed
+	 * 
+	 */
+	 public void onInterstitialCompleted();
 
-		/**
-		 * On Interstitial Received
-		 * 
-		 */
-		public void onReceiveInterstitial(BFIOInterstitalAd ad);
+	 /**
+	  * On Interstitial Received
+	  * 
+	  */
+	 public void onReceiveInterstitial(BFIOInterstitalAd ad);
 ```
 
-
-If you have any questions, don't hesitate to email us at support@beachfrontmedia.com.
-
 ## Issues and questions
-Have a bug? Please [create an issue on GitHub](https://github.com/actolap/android-sdk-sample/issues)!
+
+Have a bug? Please [create an issue on GitHub](https://github.com/beachfront/beachfront-io-android-sdk/issues)!
 
 
