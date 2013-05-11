@@ -3,13 +3,6 @@
 ## Overview
 This document details the process of integrating the Beachfront Android A SDK with your Android application. 
 
-Here are the basic integration steps:
-
-Check out the files from our repository.
-Add our SDK to your Eclipse project.
-Create ad units in your app.
-
-
 ## Requirements
 
 * BeachFront IO app id & Ad Unit id
