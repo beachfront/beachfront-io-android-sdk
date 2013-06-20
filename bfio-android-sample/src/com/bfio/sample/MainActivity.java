@@ -68,8 +68,8 @@ public class MainActivity extends Activity implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.request:
-			interstitial.requestInterstitial("appid", // appID
-					"addUnitId"); // adUnitId
+			interstitial.requestInterstitial("e04fd6b0-4eb2-4dc8-b8d3-accfb7cf8043", // appID
+					"e4471497-53ec-42f8-af58-cba7464d9e5a"); // adUnitId
 			Toast.makeText(MainActivity.this, "Interstitial request sent",
 					Toast.LENGTH_SHORT).show();
 			break;
@@ -89,8 +89,8 @@ public class MainActivity extends Activity implements
 
 	@Override
 	public void onInterstitialStarted() {
-		// TODO Auto-generated method stub
-
+		Toast.makeText(MainActivity.this, "Interstitial started",
+				Toast.LENGTH_SHORT).show();
 	}
 
 }
