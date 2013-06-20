@@ -69,15 +69,15 @@ public class MainActivity extends Activity implements
 		switch (v.getId()) {
 		case R.id.request:
 			// interactive
-//			interstitial.requestInterstitial(
-//					"e04fd6b0-4eb2-4dc8-b8d3-accfb7cf8043", // appID
-//					"e4471497-53ec-42f8-af58-cba7464d9e5a"); // adUnitId
+			interstitial.requestInterstitial(
+					"e04fd6b0-4eb2-4dc8-b8d3-accfb7cf8043", // appID
+					"e4471497-53ec-42f8-af58-cba7464d9e5a"); // adUnitId
 			
 			// non interactive
 
-			interstitial.requestInterstitial(
-					"fd298c64-e28b-4a28-f3b6-410d24be3b73", // appID
-					"2f529a17-97ff-4b34-b02d-a75cdaa0f1a9"); // adUnitId
+			// interstitial.requestInterstitial(
+			// "fd298c64-e28b-4a28-f3b6-410d24be3b73", // appID
+			// "2f529a17-97ff-4b34-b02d-a75cdaa0f1a9"); // adUnitId
 			Toast.makeText(MainActivity.this, "Interstitial request sent",
 					Toast.LENGTH_SHORT).show();
 			break;
