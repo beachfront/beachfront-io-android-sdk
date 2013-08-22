@@ -189,6 +189,8 @@ public class MainActivity extends Activity implements
 
 ```
 
+Instruction PDF can be found at - https://github.com/beachfront/beachfront-io-android-sdk/blob/master/BFIO_ANDROID_SDK.pdf
+
 
 Have a bug? Please [create an issue on GitHub](https://github.com/beachfront/beachfront-io-android-sdk/issues)!
 
