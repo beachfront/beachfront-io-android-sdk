@@ -1,18 +1,20 @@
-## Beachfront Android SDK usage guide
+## Guide
 
-## Overview
-This document details the process of integrating the Beachfront AD SDK with your Android application. 
+Beachfront.io is the easist way monetize your app using video Ads. This document shows you how to integrate Beachfront.io into your Android app.
 
-## Requirements
+## What You'll Need
 
 * BeachFront IO app id & Ad Unit id - [Get it from here](http://beachfront.io/join)
 * BeachFront SDK Jar - [Get it from here](https://github.com/beachfront/beachfront-io-android-sdk/tree/master/bfio-android-sdk)
 * Android 1.5 and above
 
-## Installation
-1. Access the beachfront.io Console and register your application to get your App ID & Ad unit Id;
-2. Download the BeachFront Android AD SDK jar, copy into the /lib folder of your Android Project. Make sure the jar files in lib is selected in the Order and Export tab of the Java Build Path panel.
-3. Add the BF activity in the application node of AndroidManifesh.xml:
+## Installing the SDK
+1. [Get a Beachfront.io account](http://beachfront.io/join) if you don't already have one.
+2. Login to the dashboard and create a new app.
+3. Click 'Edit App' and you will see your App ID & Ad Unit Id (copy for later).
+4. Download the SDK and copy the .jar into the /lib folder of your Android Project. 
+5. For Eclipe Users: Make sure the jar files in the lib folder are selected in the 'Order and Export' tab of the Java Build Path panel.
+3. Add an Activity in the application node of AndroidManifest.xml:
 
 ```
 	<activity
@@ -20,13 +22,13 @@ This document details the process of integrating the Beachfront AD SDK with your
 	android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
 
-* Make sure to have android:targetSdkVersion should be equal or greater then 13 in the manifest
+* Make sure android:targetSdkVersion is at least 13 in the manifest
 
 ```
  <uses-sdk android:targetSdkVersion="13" />
 ```
 
-   Add following required permession in your AndroidManifest.xml
+* Add the following required permissions in your AndroidManifest.xml
 
 ```
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -34,9 +36,9 @@ This document details the process of integrating the Beachfront AD SDK with your
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
 ```
 
-Once you've completed the above steps, you can start displaying ads in your application by following the simple instructions for Interstitial Ad as below :
 
-In your Activity class (the one from which you want to show the ad), declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener and instantiate it in the onCreate(Bundle savedInstanceState) method.
+## Showing Ads
+Wherever you want to show an interstitial ad, declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener, and instantiate the instance in the onCreate(Bundle savedInstanceState) method, as shown below:
 
 ```
 	public class MainActivity extends Activity implements
@@ -52,31 +54,32 @@ In your Activity class (the one from which you want to show the ad), declare a B
 	}
 ```
 
-Your application is now ready to display an Interstitial ad, 
-
-Call requestInterstitial method to request an Interstitial ad. You have to pass the appId & adUnitId
+Your application is now ready to display an Interstitial ad. Now when you are ready to show the Ad, call the requestInterstitial method, passing in your appId & adUnitId
 
 ```
-	interstitial.requestInterstitial("appid", // appID
-	"addUnitId"); // adUnitId
+interstitial.requestInterstitial("appid", "addUnitId"); 
 ```
 
-In case Ad Server find a AD it will return to 
+If an Ad is available it will call back to
+
 ```
-	public void onReceiveInterstitial(BFIOInterstitalAd ad);
+public void onReceiveInterstitial(BFIOInterstitalAd ad);
 ```
 
-Otherwise will return to:
+If no Ad is available it will call back to
+
 ```
-	public void onInterstitialFailed(BFIOErrorCode errorCode);
+public void onInterstitialFailed(BFIOErrorCode errorCode);
 ```
 
-To start the Interstitial Call the following method 
+To actually show the returned Ad call
+ 
 ```
-	interstitial.showInterstitial(ad);
+interstitial.showInterstitial(ad);
 ```
 
-Following are callbacks methods of an Interstitial ad:
+## Callback Events
+Here are all available callback methods:
 
 ```
 	/**
@@ -117,7 +120,9 @@ Following are callbacks methods of an Interstitial ad:
 	 public void onReceiveInterstitial(BFIOInterstitalAd ad);
 ```
 
-Example Code:
+## Examples
+Check out the sample app included in the SDK bundle -- it contains examples of requesting an app and listening for callback events. And here is a simple sample as well:
+
 ```
 public class MainActivity extends Activity implements
 		BFIOInterstitial.InterstitialListener {
@@ -189,8 +194,9 @@ public class MainActivity extends Activity implements
 
 ```
 
-Instruction PDF can be found at - https://github.com/beachfront/beachfront-io-android-sdk/blob/master/BFIO_ANDROID_SDK.pdf
+
+## Support
 
 
-Have a bug? Please [create an issue on GitHub](https://github.com/beachfront/beachfront-io-android-sdk/issues)!
+Have an issue? Please [contact us](mailto:udit@beachfrontmedia.com) or [create an issue on GitHub](https://github.com/beachfront/beachfront-io-android-sdk/issues)
 
