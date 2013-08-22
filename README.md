@@ -6,7 +6,7 @@ This document details the process of integrating the Beachfront AD SDK with your
 ## Requirements
 
 * BeachFront IO app id & Ad Unit id - [Get it from here](http://beachfront.io/join)
-* BeachFront SDK Jar
+* BeachFront SDK Jar - [Get it from here](https://github.com/beachfront/beachfront-io-android-sdk/tree/master/bfio-android-sdk)
 * Android 1.5 and above
 
 ## Installation
