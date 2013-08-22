@@ -19,7 +19,12 @@ This document details the process of integrating the Beachfront AD SDK with your
 	android:name="com.bfio.ad.BFIOActivity"
 	android:configChanges="keyboardHidden|orientation|screenSize" />
 ```
-* Make sure to have android:targetSdkVersion should be equal or greater then 15.
+
+* Make sure to have android:targetSdkVersion should be equal or greater then 13 in the manifest
+
+```
+ <uses-sdk android:targetSdkVersion="11" />
+```
 
    Add following required permession in your AndroidManifest.xml
 
