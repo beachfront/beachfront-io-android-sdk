@@ -23,7 +23,7 @@ This document details the process of integrating the Beachfront AD SDK with your
 * Make sure to have android:targetSdkVersion should be equal or greater then 13 in the manifest
 
 ```
- <uses-sdk android:targetSdkVersion="11" />
+ <uses-sdk android:targetSdkVersion="13" />
 ```
 
    Add following required permession in your AndroidManifest.xml
