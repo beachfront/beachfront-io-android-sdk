@@ -4,6 +4,7 @@
     <string name="app_name">bfio-android-sample</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="request">Request</string>
+    <string name="request_interstitial">Request Interstitial</string>
+    <string name="request_preroll">Request Pre Roll</string>
 
 </resources>
