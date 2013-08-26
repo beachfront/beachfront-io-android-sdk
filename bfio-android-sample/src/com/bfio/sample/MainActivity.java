@@ -55,7 +55,9 @@ public class MainActivity extends Activity implements
 		videoView.setVideoURI(uri);
 		interstitial = new BFIOInterstitial(MainActivity.this, this);
 		// Pre Roll Listener is optional
-		preRoll = new BFIOPreRoll(this, this);
+		preRoll = new BFIOPreRoll(this);
+		//Pre Roll Listener can be passed at second param
+		//preRoll = new BFIOPreRoll(this, this);
 	}
 
 	@Override
