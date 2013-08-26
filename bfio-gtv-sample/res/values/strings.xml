@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IO GTV Sample APP</string>
+    <string name="tv_hint">Press UP to select the options</string>
+    <string name="request_interstitial">Request Interstitial</string>
+    <string name="request_preroll">Request Pre Roll</string>
+
+</resources>
