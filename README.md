@@ -37,7 +37,7 @@ Beachfront.io is the easist way monetize your app using video Ads. This document
 ```
 
 
-## Showing Ads
+## Showing interstitial Ads
 Wherever you want to show an interstitial ad, declare a BFIOInterstitial instance variable, register your activity as the interstitial's BFIOInterstitial.InterstitialListener, and instantiate the instance in the onCreate(Bundle savedInstanceState) method, as shown below:
 
 ```
@@ -194,6 +194,93 @@ public class MainActivity extends Activity implements
 
 ```
 
+## Showing Pre Roll Ads
+
+Wherever you want to show an Pre Roll Video ad, declare a BFIOPreRoll instance variable and instantiate the instance in the onCreate(Bundle savedInstanceState) method, as shown below:
+
+```
+	public class MainActivity extends Activity  {
+
+	BFIOPreRoll preRoll;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+	preRoll = new BFIOPreRoll(this);
+	}
+```
+
+If you want to see the pre roll call back events. You can instantiate in a differen way :
+
+```
+	public class MainActivity extends Activity implements
+	PreRollAdListener  {
+
+	BFIOPreRoll preRoll;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+	preRoll = new BFIOPreRoll(this, this);
+	}
+```
+You need to use IO Video View to show pre roll video ads. IO Video View in an android custom view & can be declare in layout xml files : 
+
+```
+ 	<com.bfio.ad.VideoViewIO
+        android:id="@+id/io_video_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+```
+
+IO Video View can also build programmatically using java code:
+
+```
+  VideoViewIO videoViewIO = new VideoViewIO(context);
+```
+
+Your application is now ready to display an Pre Roll ad. Now when you are ready to play a video with pre roll, call the playWithPreRoll method, passing in your appId, adUnitId & IOVideoView:
+
+```
+ // Set the url of actual video
+ ioVideoView.setVideoURI(uri);
+ preRoll.playWithPreRoll("<appID>","<adUnitID>", ioVideoView); 
+```
+
+In case of sucessfull fill, it will play the pre roll first then the actual video, otherwise will play the actual video.
+
+## Callback Events
+Here are all available callback methods:
+
+```
+	/**
+	 * PreRoll did not found
+	 * 
+	 * @param errorCode
+	 */
+	public void onFailed(BFIOErrorCode errorCode);
+
+	/**
+	 * PreRoll Ad started
+	 * 
+	 */
+	public void onPreRollStarted();
+
+	/**
+	 * PreRoll clicked
+	 * 
+	 */
+	public void onPreRollClicked();
+
+	/**
+	 * PreRoll completed
+	 * 
+	 */
+	public void onPreRollCompleted();
+
+```
 
 ## Support
 
