@@ -4,7 +4,7 @@ Beachfront.io is the easist way monetize your app using video Ads. This document
 
 ## What You'll Need
 
-* BeachFront IO app id & Ad Unit id - [Get it from here](http://beachfront.io/join)
+* BeachFront IO app id - [Get it from here](http://beachfront.io/join)
 * BeachFront SDK Jar - [Get it from here](https://github.com/beachfront/beachfront-io-android-sdk/tree/master/bfio-android-sdk)
 
 ## Supported Platforms
@@ -14,7 +14,7 @@ Beachfront.io is the easist way monetize your app using video Ads. This document
 ## Installing the SDK
 1. [Get a Beachfront.io account](http://beachfront.io/join) if you don't already have one.
 2. Login to the dashboard and create a new app.
-3. Click 'Edit App' and you will see your App ID & Ad Unit Id (copy for later).
+3. Click 'Edit App' and you will see your App ID (copy for later).
 4. Download the SDK and copy the .jar into the /lib folder of your Android Project. 
 5. For Eclipe Users: Make sure the jar files in the lib folder are selected in the 'Order and Export' tab of the Java Build Path panel.
 3. Add an Activity in the application node of AndroidManifest.xml:
@@ -60,7 +60,7 @@ Wherever you want to show an interstitial ad, declare a BFIOInterstitial instanc
 Your application is now ready to display an Interstitial ad. Now when you are ready to show the Ad, call the requestInterstitial method, passing in your appId & adUnitId
 
 ```
-interstitial.requestInterstitial("appid", "addUnitId"); 
+interstitial.requestInterstitial("appid"); 
 ```
 
 If an Ad is available it will call back to
@@ -249,7 +249,7 @@ Your application is now ready to display an Pre Roll ad. Now when you are ready 
 ```
  // Set the url of actual video
  ioVideoView.setVideoURI(uri);
- preRoll.playWithPreRoll("<appID>","<adUnitID>", ioVideoView); 
+ preRoll.playWithPreRoll("<appID>", ioVideoView); 
 ```
 
 In case of sucessfull fill, it will play the pre roll first then the actual video, otherwise will play the actual video.
