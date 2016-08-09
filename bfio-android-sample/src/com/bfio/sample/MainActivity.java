@@ -105,17 +105,15 @@ public class MainActivity extends Activity implements
 		switch (v.getId()) {
 		case R.id.request:
 			// interactive
-			interstitial.requestInterstitial(
-					"e04fd6b0-4eb2-4dc8-b8d3-accfb7cf8043", // appID
-					"e4471497-53ec-42f8-af58-cba7464d9e5a"); // adUnitId
-
+			interstitial
+					.requestInterstitial("4e36721f-6155-41bd-e989-9432beb17d0b"); // adUnitId
 			Toast.makeText(MainActivity.this, "Interstitial request sent",
 					Toast.LENGTH_SHORT).show();
 			break;
 
 		case R.id.request_preroll:
-			preRoll.playWithPreRoll("e04fd6b0-4eb2-4dc8-b8d3-accfb7cf8043", // appID
-					"e4471497-53ec-42f8-af58-cba7464d9e5a", videoView); // adUnitId
+			preRoll.playWithPreRoll("4e36721f-6155-41bd-e989-9432beb17d0b",
+					videoView);
 			Toast.makeText(MainActivity.this, "PreRoll request initiated",
 					Toast.LENGTH_SHORT).show();
 			break;
