@@ -57,7 +57,7 @@ Wherever you want to show an interstitial ad, declare a BFIOInterstitial instanc
 	}
 ```
 
-Your application is now ready to display an Interstitial ad. Now when you are ready to show the Ad, call the requestInterstitial method, passing in your appId & adUnitId
+Your application is now ready to display an Interstitial ad. Now when you are ready to show the Ad, call the requestInterstitial method, passing in your appId.
 
 ```
 interstitial.requestInterstitial("appid"); 
