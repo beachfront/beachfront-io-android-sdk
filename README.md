@@ -285,6 +285,32 @@ Here are all available callback methods:
 
 ```
 
+## Showing In-Feed Ads
+Wherever you want to show an In-Feed Video ad, declare a BFIOInFeedAdapter instance variable and instantiate the instance, as shown below:
+
+```
+	public class MainActivity extends Activity  {
+
+	BFIOInFeedAdapter bfioInFeedAdapter;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+	bfioInFeedAdapter = new BFIOInFeedAdapter(this, originalAdapter, adPosition,”appId”);
+	}
+```
+
+Wrap your listView adaptor with BFIOInFeedAdapter.
+
+In case, you want to clear all content of the original Adapter use the following code :
+
+```
+		bfioInFeedAdapter.clear();
+		bfioInFeedAdapter.notifyDataSetChanged();
+```
+
+
 ## Support
 
 
