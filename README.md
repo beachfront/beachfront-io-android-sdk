@@ -4,7 +4,7 @@ Beachfront.io is the easist way monetize your app using video Ads. This document
 
 ## What You'll Need
 
-* BeachFront IO app id - [Get it from here](http://beachfront.io/join)
+* BeachFront IO app id - [Get it from here](https://platform.beachfront.io/en/join)
 * BeachFront SDK Jar - [Get it from here](https://github.com/beachfront/beachfront-io-android-sdk/tree/master/bfio-android-sdk)
 
 ## Supported Platforms
