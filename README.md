@@ -9,7 +9,8 @@ Beachfront.io is the easist way monetize your app using video Ads. This document
 
 ## Supported Platforms
 * Android Phone & Tablets having android 1.5 or above
-* Google TV
+* Amazon Fire TV
+* Android TV
 
 ## Installing the SDK
 1. [Get a Beachfront.io account](http://beachfront.io/join) if you don't already have one.
